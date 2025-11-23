@@ -34,10 +34,13 @@ exports.adminLogin = asyncHandler(async (req, res) => {
         }
 
         // Generate JWT token
-        const secret = process.env.JWT_SECRET || 'servify_jwt_secret_key_2024_very_secure_and_long_key_for_production';
+        if (!process.env.JWT_SECRET) {
+            res.status(500);
+            throw new Error('Server configuration error: JWT_SECRET not set');
+        }
         const token = jwt.sign(
             { id: admin._id, type: 'admin', role: admin.role }, 
-            secret, 
+            process.env.JWT_SECRET, 
             { expiresIn: '7d' }
         );
 

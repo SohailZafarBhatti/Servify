@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LoadingSpinner from "../LoadingSpinner";
 import { useSocket } from "../../context/SocketContext";
-import axios from "axios";
+import api from "../../utils/api";
 
 const TasksTab = ({ tasks: injectedTasks }) => {
   const [tasks, setTasks] = useState([]);
@@ -11,10 +11,7 @@ const TasksTab = ({ tasks: injectedTasks }) => {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/api/tasks/my-tasks", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await api.get("/tasks/my-tasks");
       setTasks(response.data.tasks || []);
     } catch (err) {
       console.error("Error fetching tasks:", err.response?.data || err.message);

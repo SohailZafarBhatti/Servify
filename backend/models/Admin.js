@@ -399,8 +399,7 @@ const createDefaultAdmin = async () => {
       await defaultAdmin.save();
       console.log('Default admin created successfully');
       console.log('Email: waleedmeer36@gmail.com');
-      console.log('Password: Admin123!@#');
-      console.log('⚠️  Please change the default password immediately!');
+      console.log('⚠️  Please change the default password immediately after first login!');
     }
   } catch (error) {
     console.error('Error creating default admin:', error);

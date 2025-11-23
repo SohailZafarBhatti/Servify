@@ -19,8 +19,13 @@ const protectAdmin = async (req, res, next) => {
 
   try {
     // Verify token
-    const secret = process.env.JWT_SECRET || 'servify_jwt_secret_key_2024_very_secure_and_long_key_for_production';
-    const decoded = jwt.verify(token, secret);
+    if (!process.env.JWT_SECRET) {
+      return res.status(500).json({
+        success: false,
+        message: 'Server configuration error: JWT_SECRET not set'
+      });
+    }
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     // Check if token is for admin
     if (decoded.type !== 'admin') {
