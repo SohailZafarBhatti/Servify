@@ -375,11 +375,11 @@ const Admin = mongoose.model('Admin', adminSchema);
 // Create default admin if it doesn't exist
 const createDefaultAdmin = async () => {
   try {
-    const existingAdmin = await Admin.findOne({ email: 'waleedmeer36@gmail.com' });
+    const existingAdmin = await Admin.findOne({ email: 'zsohial6@gmail.com' });
     
     if (!existingAdmin) {
       const defaultAdmin = new Admin({
-        email: 'waleedmeer36@gmail.com',
+        email: 'zsohial6@gmail.com',
         password: 'Admin123!@#',
         name: 'Super Admin',
         role: 'super_admin',
@@ -398,7 +398,7 @@ const createDefaultAdmin = async () => {
       
       await defaultAdmin.save();
       console.log('Default admin created successfully');
-      console.log('Email: waleedmeer36@gmail.com');
+      console.log('Email: zsohial6@gmail.com');
       console.log('⚠️  Please change the default password immediately after first login!');
     }
   } catch (error) {

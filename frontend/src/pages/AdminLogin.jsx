@@ -13,11 +13,11 @@ const AdminLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (email === "waleedmeer36@gmail.com" && password === "1515MEER") {
+    if (email === "zsohial6@gmail.com" && password === "Admin123!@#") {
       const adminUser = {
         email,
         role: "admin",
-        name: "Admin Waleed",
+        name: "Admin Sohail",
       };
 
       // ✅ Save admin user in context

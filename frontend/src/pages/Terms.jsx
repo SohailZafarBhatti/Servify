@@ -109,7 +109,7 @@ const Terms = () => {
               For questions or concerns about these Terms & Conditions, please
               contact us at:{" "}
               <span className="font-medium text-blue-600 cursor-pointer">
-                waleedmeer36@gmail.com
+                zsohial6@gmail.com
               </span>
             </p>
           </section>
