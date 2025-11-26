@@ -11,10 +11,12 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (isAuthenticated && user) {
-      // Connect to Socket.IO server
-      const socketUrl = import.meta.env.VITE_API_URL 
-        ? import.meta.env.VITE_API_URL.replace('/api', '') 
-        : 'http://localhost:5000';
+      // Determine Socket.IO base URL with sensible fallbacks for prod/local
+      const socketUrl =
+        import.meta.env.VITE_SOCKET_URL ||
+        (import.meta.env.VITE_API_URL
+          ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '')
+          : window.location.origin || 'http://localhost:5000');
       
       console.log('Connecting to socket server:', socketUrl);
       

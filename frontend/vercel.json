@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDirectory": "dist",
+  "env": {
+    "VITE_API_URL": "@servify_backend_api",
+    "VITE_SOCKET_URL": "@servify_backend_socket"
+  }
+}
+
