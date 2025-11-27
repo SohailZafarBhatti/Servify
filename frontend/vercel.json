@@ -6,8 +6,8 @@
   "devCommand": "npm run dev",
   "outputDirectory": "dist",
   "env": {
-    "VITE_API_URL": "@servify_backend_api",
-    "VITE_SOCKET_URL": "@servify_backend_socket"
+    "VITE_API_FRONTEND_URL": "@https://servify-p83z.onrender.com/api",
+    "VITE_SOCKET_URL": "@https://servify-p83z.onrender.com"
   }
 }
 

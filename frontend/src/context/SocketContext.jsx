@@ -14,8 +14,8 @@ export const SocketProvider = ({ children }) => {
       // Determine Socket.IO base URL with sensible fallbacks for prod/local
       const socketUrl =
         import.meta.env.VITE_SOCKET_URL ||
-        (import.meta.env.VITE_API_URL
-          ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '')
+        (import.meta.env.VITE_API_FRONTEND_URL
+          ? import.meta.env.VITE_API_FRONTEND_URL.replace(/\/api\/?$/, '')
           : window.location.origin || 'http://localhost:5000');
       
       console.log('Connecting to socket server:', socketUrl);
